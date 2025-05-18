@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>🏁 Placar de Corrida</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, rgb(30, 30, 30), rgb(200, 0, 0));
+      color: white;
+    }
+
+    /* Menu lateral */
+    .sidebar {
+      position: fixed;
+      left: -250px;
+      top: 0;
+      width: 250px;
+      height: 100%;
+      background-color: #111;
+      padding-top: 60px;
+      transition: left 0.3s ease;
+      z-index: 1000;
+    }
+
+    .sidebar a {
+      padding: 15px 20px;
+      text-decoration: none;
+      color: white;
+      display: block;
+    }
+
+    .sidebar a:hover {
+      background-color: #575757;
+    }
+
+    /* Botão hamburguer */
+    .hamburger {
+      position: absolute;
+      top: 15px;
+      left: 20px;
+      font-size: 30px;
+      cursor: pointer;
+      z-index: 1100;
+    }
+
+    /* Conteúdo principal */
+    .main {
+      margin-left: 0;
+      padding: 60px 20px 20px 20px;
+      transition: margin-left 0.3s ease;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .title {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    th, td {
+      padding: 12px;
+      border-bottom: 1px solid #999;
+      text-align: center;
+    }
+
+    th {
+      background-color: rgba(255, 255, 255, 0.15);
+    }
+
+    /* Menu aberto */
+    .sidebar.open {
+      left: 0;
+    }
+
+    .main.open {
+      margin-left: 250px;
+    }
+
+    @media (max-width: 768px) {
+      .main.open {
+        margin-left: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Menu Hambúrguer -->
+  <div class="hamburger" onclick="toggleMenu()">☰</div>
+
+  <!-- Menu lateral -->
+  <div class="sidebar" id="sidebar">
+    <a href="#">🏎 Lista de Corredores</a>
+    <a href="#">📊 Classificação Geral</a>
+    <a href="#">📅 Próxima Corrida</a>
+  </div>
+
+  <!-- Conteúdo Principal -->
+  <div class="main" id="main">
+    <div class="container">
+      <h1 class="title">🏁 Placar de Corrida</h1>
+      <table>
+        <thead>
+          <tr>
+            <th>Posição</th>
+            <th>Piloto</th>
+            <th>Número</th>
+            <th>Pontuação</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1º</td>
+            <td>Lucas Andrade</td>
+            <td>12</td>
+            <td>78</td>
+          </tr>
+          <tr>
+            <td>2º</td>
+            <td>Fernanda Costa</td>
+            <td>27</td>
+            <td>74</td>
+          </tr>
+          <tr>
+            <td>3º</td>
+            <td>João Silva</td>
+            <td>9</td>
+            <td>69</td>
+          </tr>
+          <!-- Você pode adicionar mais pilotos aqui -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- JavaScript do menu -->
+  <script>
+    function toggleMenu() {
+      document.getElementById("sidebar").classList.toggle("open");
+      document.getElementById("main").classList.toggle("open");
+    }
+  </script>
+
+</body>
+</html>

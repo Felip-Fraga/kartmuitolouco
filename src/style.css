@@ -1,0 +1,19 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background: linear-gradient(to bottom right, rgb(20, 20, 20), rgb(200, 0, 0));
+    color: white;
+    font-family: Arial, sans-serif;
+
+    /* Centralização com flexbox */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+h1 {
+    font-size: 3rem;
+}
